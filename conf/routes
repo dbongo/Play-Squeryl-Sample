@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+GET     /javascript-routes          controllers.Application.javascriptRoutes
+
+POST    /insert                     controllers.Application.insert
+
+GET     /list                       controllers.Application.list
+
+->      /ui                         yeoman.Routes
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

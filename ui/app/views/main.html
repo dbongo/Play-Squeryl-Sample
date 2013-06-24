@@ -1,0 +1,52 @@
+<div class="hero-unit">
+  <h1>Insert User</h1>
+  <br />
+  <form class="form-horizontal" ng-submit="insertUser()">
+    <div class="control-group">
+      <label class="control-label">Name</label>
+      <div class="controls">
+        <input type="text" ng-model="user.name" placeHolder="user name" required>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Email</label>
+      <div class="controls">
+        <input type="text" ng-model="user.email" placeHolder="example@example.com" required>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Comment</label>
+      <div class="controls">
+        <input type="text" ng-model="user.comment" placeHolder="comment" required>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn">Insert</button>
+      </div>
+    </div>
+  </form>
+  
+  <h1>User List</h1>
+  <br />
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>CreatedAt</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Comment</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.created_at_formatted }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.comment }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
